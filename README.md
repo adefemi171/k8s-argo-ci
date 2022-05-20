@@ -75,7 +75,7 @@ http://localhost:3000/
     docker ps -a
     ```
 
-5.  View the image in your localhost port 8888 by typing ```localhost:3000``` in your browser
+5.  View the image in your localhost port by typing ```localhost:3000``` in your browser
 
 
 
