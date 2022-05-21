@@ -15,6 +15,8 @@ Golang
 # Top-level directory layout
 
     📦k8s-argo-ci
+        📦.circleci
+            ┗ 📜config.yml
         ┣ 📜.gitignore
         ┣ 📜Dockerfile
         ┣ 📜go.mod
@@ -22,6 +24,10 @@ Golang
         ┣ 📜main.go
         ┣ 📜README.md
 
+
+## Folder structure
+
+1. [.circleci](https://github.com/adefemi171/k8s-argo-ci/tree/main/.circleci): Contains configuration for deployment
 
 # How to setup project and run locally
 
@@ -38,6 +44,12 @@ git checkout main
 ```
 
 
+### Connect your repository to CircleCI
+- To run the CI part of the application you will need to link your repository with [CircleCI](https://circleci.com/) by [creating an account and connecting your repo](https://circleci.com/signup/). 
+- To add the environment variables. Click on Dashboard, Select your pipeline, on the far right of your screen go to Project Settings -> Environment variables. Add `DOCKER_PASSWORD`, `DOCKER_USERNAME` and `GITHUB_PERSONAL_TOKEN`.
+- Update the [.circleci/config.yml](https://github.com/adefemi171/k8s-argo-ci/blob/main/.circleci/config.yml) from line [32](https://github.com/adefemi171/k8s-argo-ci/blob/291e74a727be999407c83501d8b78640473802b8/.circleci/config.yml#L32) to line [53](https://github.com/adefemi171/k8s-argo-ci/blob/291e74a727be999407c83501d8b78640473802b8/.circleci/config.yml#L53) to reflect yur changes and your docker image.
+
+
 ### Run the application
 
 1. Run the the application using
@@ -49,6 +61,7 @@ go run main.go
 ```
 http://localhost:3000/
 ```
+
 
 # How to setup project using docker
 
